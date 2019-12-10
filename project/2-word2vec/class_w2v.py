@@ -1,5 +1,6 @@
 # coding=utf-8
-from sklearn.cross_validation import KFold, StratifiedKFold
+# from sklearn.cross_validation import KFold, StratifiedKFold
+from sklearn.model_selection import KFold, StratifiedKFold
 from gensim.models import word2vec
 import xgboost as xgb
 import numpy as np
@@ -8,6 +9,8 @@ from sklearn.svm import LinearSVC,SVC
 from sklearn.ensemble import VotingClassifier
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.preprocessing import MinMaxScaler,StandardScaler
+
+
 class w2v():
     def __init__(self,size=300):
         random_rate = 8240

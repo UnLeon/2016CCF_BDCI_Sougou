@@ -3,11 +3,12 @@
 根据上一步骤得到的CSV文件，将搜索文本以及三个属性剥离，保存为相应的文件
 注意路径
 """
+import numpy
 import pandas as pd
 
 #path of the train and test files
-trainname = 'user_tag_query.10W.TRAIN.csv'
-testname = 'user_tag_query.10W.TEST.csv'
+trainname = 'user_tag_query.9W.TRAIN.csv'
+testname = 'user_tag_query.1W.TEST.csv'
 
 data = pd.read_csv(trainname)
 print data.info()

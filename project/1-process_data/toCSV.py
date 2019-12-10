@@ -7,7 +7,7 @@ csvfile表示了生成文件的信息
 """
 import csv
 
-add = 'user_tag_query.10W.TRAIN' #path of the original train file
+add = 'user_tag_query.9W.TRAIN' #path of the original train file
 
 csvfile = file(add + '.csv', 'wb')# the path of the generated train file
 writer = csv.writer(csvfile)
@@ -28,7 +28,7 @@ with open(add, 'r') as f:
         writedata.append(querystr)
         writer.writerow(writedata)
 
-add = 'user_tag_query.10W.TEST'#path of the original test file
+add = 'user_tag_query.1W.TEST'#path of the original test file
 
 csvfile = file(add + '.csv', 'wb')# the path of the generated test file
 writer = csv.writer(csvfile)

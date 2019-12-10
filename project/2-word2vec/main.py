@@ -4,6 +4,7 @@ import preprocess
 import numpy as np
 import csv
 
+
 def input(trainname):
     """
     load file
@@ -22,6 +23,8 @@ def input(trainname):
                 print "error:", line, count
                 traindata.append(" ")
     return traindata
+
+
 if __name__ == '__main__':
     """
     使用方法：先训练wv的model，然后再生成wv的向量，最后可以使用2-fold验证效果

@@ -27,6 +27,8 @@ def input(trainname):
                 print "error:", line, count
                 traindata.append("1 ")
     return traindata
+
+
 def output(filename, ID, age, gender, education):
     """
     generate the submit file
@@ -45,6 +47,8 @@ def output(filename, ID, age, gender, education):
             #     break
             f.write(str(ID[i]) + ' ' + str(age[i]) + ' ' + str(gender[i]) + ' ' + str(education[i]) + '\n')
             count+=1
+
+
 if __name__ == '__main__':
     """
     the main function

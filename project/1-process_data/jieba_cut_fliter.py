@@ -12,6 +12,8 @@ import jieba.posseg
 import os, sys
 reload(sys)
 sys.setdefaultencoding('utf8')
+
+
 def input(trainname):
     traindata = []
     with open(trainname, 'rb') as f:
@@ -25,9 +27,11 @@ def input(trainname):
                 print "error:", line, count
             line=f.readline()
     return traindata
+
+
 start = time.clock()
 
-filepath = 'train.csv'
+filepath = 'train_querylist.csv'
 QueryList = input(filepath)
 
 writepath = 'writefile.csv'
