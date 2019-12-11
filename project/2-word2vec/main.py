@@ -5,6 +5,7 @@ import numpy as np
 import csv
 
 
+
 def input(trainname):
     """
     load file
