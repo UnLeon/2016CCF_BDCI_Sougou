@@ -3,11 +3,6 @@ import class_w2v
 import preprocess
 import numpy as np
 import csv
-import sys
-
-if sys.getdefaultencoding() != 'gbk':
-    reload(sys)
-    sys.setdefaultencoding('gbk')
 
 
 def input(trainname):
