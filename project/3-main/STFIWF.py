@@ -16,11 +16,13 @@ import scipy.sparse as sp
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.externals import six
 from sklearn.externals.six.moves import xrange
+# from numpy import xrange
 from sklearn.preprocessing import normalize
 from sklearn.feature_extraction.hashing import FeatureHasher
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 from sklearn.utils import deprecated
-from sklearn.utils.fixes import frombuffer_empty, bincount
+#from sklearn.utils.fixes import frombuffer_empty, bincount
+from numpy import frombuffer, bincount
 from sklearn.utils.validation import check_is_fitted
 from sklearn import preprocessing
 
@@ -761,7 +763,7 @@ class CountVectorizer(BaseEstimator, VectorizerMixin):
 
         j_indices = np.asarray(j_indices, dtype=np.intc)
         indptr = np.frombuffer(indptr, dtype=np.intc)
-        values = frombuffer_empty(values, dtype=np.intc)
+        values = frombuffer(values, dtype=np.intc)
 
         X = sp.csr_matrix((values, j_indices, indptr),
                           shape=(len(indptr) - 1, len(vocabulary)),
@@ -811,7 +813,7 @@ class CountVectorizer(BaseEstimator, VectorizerMixin):
 
         j_indices = np.asarray(j_indices, dtype=np.intc)
         indptr = np.frombuffer(indptr, dtype=np.intc)
-        values = frombuffer_empty(values, dtype=np.float32)
+        values = np.frombuffer(values, dtype=np.float32)
 
         X = sp.csr_matrix((values, j_indices, indptr),
                           shape=(len(indptr) - 1, len(vocabulary)))
