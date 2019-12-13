@@ -20,7 +20,8 @@ from sklearn.preprocessing import normalize
 from sklearn.feature_extraction.hashing import FeatureHasher
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 from sklearn.utils import deprecated
-from sklearn.utils.fixes import frombuffer_empty, bincount
+# from sklearn.utils.fixes import frombuffer_empty, bincount
+from numpy import frombuffer, bincount
 from sklearn.utils.validation import check_is_fitted
 from sklearn import preprocessing
 

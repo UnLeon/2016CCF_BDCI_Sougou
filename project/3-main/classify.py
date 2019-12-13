@@ -1,6 +1,7 @@
 # coding=utf-8
 import multiprocessing,Queue
-from sklearn.cross_validation import KFold, StratifiedKFold
+# from sklearn.cross_validation import KFold, StratifiedKFold
+from sklearn.model_selection import KFold, StratifiedKFold
 import xgboost as xgb
 from STFIWF import TfidfVectorizer
 import numpy as np
