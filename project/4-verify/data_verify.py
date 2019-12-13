@@ -13,7 +13,7 @@ real_file = pd.read_csv('Verify.csv')
 test_file = pd.read_csv('Submit.csv')
 
 # 准确率计算
-age_correct = test_file[test_file.ID==real_file.ID and test_file.age==real_file.age]
+age_correct = test_file[test_file.ID == real_file.ID and test_file.age == real_file.age]
 P_age = sum(age_correct.age)/sum(test_file.age)
 R_age = sum(age_correct.age)/sum(real_file.age)
 
