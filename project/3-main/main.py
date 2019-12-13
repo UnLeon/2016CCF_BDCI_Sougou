@@ -65,9 +65,9 @@ if __name__ == '__main__':
     testname = 'jieba_test_cut.csv'
     traindata = input(trainname)
     testdata = input(testname)
-    label_genderfile_path = 'train_gender.csv'
-    label_agefile_path = 'train_age.csv'
-    label_edufile_path = 'train_education.csv'
+    label_genderfile_path = 'data_gender.csv'
+    label_agefile_path = 'data_age.csv'
+    label_edufile_path = 'data_education.csv'
     genderdata = np.loadtxt(open(label_genderfile_path, 'r')).astype(int)
     agedata = np.loadtxt(open(label_agefile_path, 'r')).astype(int)
     educationdata = np.loadtxt(open(label_edufile_path, 'r')).astype(int)

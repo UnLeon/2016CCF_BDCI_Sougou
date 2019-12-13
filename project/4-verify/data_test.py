@@ -1,11 +1,11 @@
 # coding=utf-8
 #just for version test
 
-age = "100%"
-gender = "100%"
-edu = "100%"
+age = "0.841"
+gender = "0.626"
+edu = "0.619"
 print 'info:----------start----------'
 print 'info:----------verify_end----------'
 print 'age准确率为', age
-print 'gender准确率为', age
-print 'edu准确率为', age
+print 'gender准确率为', gender
+print 'edu准确率为', edu
