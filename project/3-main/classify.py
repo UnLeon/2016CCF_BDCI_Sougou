@@ -1,11 +1,12 @@
 # coding=utf-8
 import multiprocessing,Queue
-# from sklearn.cross_validation import KFold, StratifiedKFold
-from sklearn.model_selection import KFold, StratifiedKFold
+from sklearn.cross_validation import KFold, StratifiedKFold
+#from sklearn.model_selection import KFold, StratifiedKFold
 import xgboost as xgb
 from STFIWF import TfidfVectorizer
 import numpy as np
-from sklearn.linear_model import SGDClassifier, LogisticRegression,RidgeClassifier,PassiveAggressiveClassifier,Lasso,HuberRegressor
+from sklearn.linear_model import SGDClassifier, LogisticRegression,RidgeClassifier,PassiveAggressiveClassifier,Lasso
+from sklearn.linear_model import HuberRegressor
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.ensemble import VotingClassifier,RandomForestClassifier,gradient_boosting
 from sklearn.ensemble.bagging import BaggingClassifier
@@ -98,16 +99,16 @@ class term(object):
         """
         print 'fitting..'
         models = self.base_models
-        # folds = list(KFold(len(Y), n_folds=5, random_state=0))
-        folds = list(KFold(n_splits=5,random_state=0))
+        folds = list(KFold(len(Y), n_folds=5, random_state=0))
+        # folds = list(KFold(n_splits=5,random_state=0))
         S_train = np.zeros((X.shape[0], len(models)))
         S_test = np.zeros((T.shape[0], len(models)))
 
         for i, bm in enumerate(models):
             clf = bm[1]
 
-            S_test_i = np.zeros((T.shape[0], len(folds.split(Y))))
-            for j, (train_idx, test_idx) in enumerate(folds.split(Y)):
+            S_test_i = np.zeros((T.shape[0], len(folds)))
+            for j, (train_idx, test_idx) in enumerate(folds):
                 X_train = X[train_idx]
                 y_train = Y[train_idx]
                 X_holdout = X[test_idx]
@@ -147,10 +148,10 @@ class term(object):
         print '向量化中...'
         X=np.array(X)
         fold_n=2
-        # folds = list(StratifiedKFold(Y, n_folds=fold_n, shuffle=False,random_state=0))
-        folds = list(StratifiedKFold(n_splits=fold_n, shuffle=False,random_state=0))
+        folds = list(StratifiedKFold(Y, n_folds=fold_n, shuffle=False,random_state=0))
+        # folds = list(StratifiedKFold(n_splits=fold_n, shuffle=False,random_state=0))
         score = np.zeros(fold_n)
-        for j, (train_idx, test_idx) in enumerate(folds.split(Y)):
+        for j, (train_idx, test_idx) in enumerate(folds):
             print j+1,'-fold'
 
             X_train = X[train_idx]

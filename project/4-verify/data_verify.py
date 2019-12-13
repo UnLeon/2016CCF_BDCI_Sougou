@@ -1,4 +1,4 @@
-# conding=utf-8
+# coding=utf-8
 
 import numpy
 import pandas as pd
@@ -9,8 +9,8 @@ import os
 # real_gender = pd.read_csv('verify.csv').gender
 # real_edu = pd.read_csv('verify.csv').edu
 
-real_file = pd.read_csv('verify.csv')
-test_file = pd.read_csv('submit.csv')
+real_file = pd.read_csv('Verify.csv')
+test_file = pd.read_csv('Submit.csv')
 
 # 准确率计算
 age_correct = test_file[test_file.ID==real_file.ID and test_file.age==real_file.age]
