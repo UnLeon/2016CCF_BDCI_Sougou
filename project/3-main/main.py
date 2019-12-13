@@ -112,6 +112,11 @@ if __name__ == '__main__':
         edu=termob.predict(edu_traindatas, edulabel, testdata, wv_edu_traindatas, w2vtest, 'edu')
         ID = pd.read_csv('user_tag_query.10W.TEST.csv').ID
         output('submit.csv', ID, age, gender, edu)
+        # 输出比较文件
+        age = pd.read_csv('user_tag_query.10W.TEST.csv').age
+        gender = pd.read_csv('user_tag_query.10W.TEST.csv').gender
+        edu = pd.read_csv('user_tag_query.10W.TEST.csv').edu
+        output('verify.csv', ID, age, gender, edu)
 
     end=time.time()
     print 'total time is', end-start

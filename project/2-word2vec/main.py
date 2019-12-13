@@ -1,8 +1,9 @@
-#coding=utf-8
+# coding=utf-8
 import class_w2v
 import preprocess
 import numpy as np
 import csv
+
 
 
 def input(trainname):
@@ -32,9 +33,9 @@ if __name__ == '__main__':
     注意路径
     """
     print '---------w2v----------'
-    # order = 'train w2v model'
+    order = 'train w2v model'
     # order='getvec'
-    order = 'test'
+    # order = 'test'
 
     print 'order is', order
 
